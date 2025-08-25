@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoneyMate - Transactions</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/transactions.css">
+    <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+    rel="stylesheet"
+    />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-pVIc0XAf6mE3sW+Nzx7x4FI+hX1Uv+GiqJtmvYdc1tlNJ19fZ3sXK6/4NC3K4uYCxu+0lP8e+zl5y6N2sp78wg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    />
+
+    <link
+    rel="icon"
+    href="images/favicon-32x32.png"
+    type="image/png"
+    />
+</head>
+<body>
+    <header class="site-header">
+    <div class="container header-inner">
+      <div class="branding"><h1>Money<span>Mate</span></h1></div>
+      <nav class="site-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="dashboard.html" class="nav-link ">Dashboard</a>
+        <a href="budgets.html" class="nav-link">Budgets</a>
+        <a href="transactions.html" class="nav-link is-active">Transactions</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="login.html" class="nav-link">Logout</a>
+      </nav>
+    </div>
+  </header>
+    
+  <section class="dashboard-header">
+    <div class="container">
+        <h2>All Transactions</h2>
+        <button class="btn btn-primary">
+            <i class="fas fa-plus"></i>New Transaction
+        </button>
+    </div>
+  </section>
+
+  <section class="transactions-section">
+    <div class="container">
+        <table class="transactions-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Category</th>
+                    <th class="text-right">Amount</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+        </table>>
+    </div>
+  </section>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>&copy; 2025 MoneyMate. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/transactions.js"></script>
+
+
+
+</body>
+</html>

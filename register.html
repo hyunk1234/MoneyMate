@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MoneyMate - Sign Up</title>
+
+    <!-- Font Icon -->
+    <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-pVIc0XAf6mE3sW+Nzx7x4FI+hX1Uv+GiqJtmvYdc1tlNJ19fZ3sXK6/4NC3K4uYCxu+0lP8e+zl5y6N2sp78wg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+    <link
+    rel="icon"
+    href="images/favicon-32x32.png"
+    type="image/png"
+    />
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <header class="site-header">
+
+        <div class="container header-inner">
+            <div class="branding">
+                <h1>Money<span>Mate</span></h1>
+            </div>
+            <nav class="site-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="register.html" class="nav-link is-active">Register</a>
+                <a href="login.html"class="nav-link">login</a>
+                <a href="blog.html" class="nav-link">Blogs</a>
+            </nav>
+        </div>
+
+    </header>
+
+    <section class="signup-section">
+        <div class="container">
+            <div class="signup-card">
+                <h2>Create Your MoneyMate Account</h2>
+                <form id="signup-form">
+                    <div class="form-group">
+                        <label class="form-label" for="name">Full Name</label>
+                        <input type="text" id="name" name="name" class="form-input" placeholder="Your Name" required />
+                    </div>
+                </form>
+                <form id="signup-form">
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email Address</label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="you@example.com" required />
+                    </div>
+                </form>
+                <form id="signup-form">
+                    <div class="form-group">
+                        <label class="form-label" for="password">Password</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="password" name="password" class="form-input" placeholder="*********" required />
+                            <button type="button" class="toggle-password">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-group terms">
+                        <input type="checkbox" id="agree-terms" name="agree-terms" required />
+                        <label for="agree-terms">I agree to the <a href="#" class="link">Terms of Service</a></label>
+                    </div>
+
+                    <button type="submit" class="form-submit btn-primary">Sign Up</button>
+
+                    <p class="already">Already have an account?<a href="login.html" class="link">Sign In</a></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>&copy;2025 MoneyMate. Made By Hyun. All rights reserved.</p>
+            <div class="footer-nav">
+                <a href="#">Terms</a> |
+                <a href="#">Privacy</a> 
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <script>
+        document.getElementById('signup-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting the default way
+
+            // Get form data
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+
+            // Send data to the server using fetch API
+            fetch('http://127.0.0.1:5000/api/auth/register', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ name, email, password })
+})
+
+            .then(response => response.json())
+            .then(data => {
+                if(data.error){
+                    alert('Error: ' + data.error);
+                } else {
+                    alert(data.message);
+                    window.location.href = 'login.html'; // Redirect to login page
+                }
+            })
+            .catch(error => {
+                console.error('Registration error:', error);
+                alert('An error occurred. Please try again later.');
+            });
+        });
+    </script>
+    <script>
+        document.querySelectorAll('.toggle-password').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const input = btn.closest('.password-wrapper').querySelector('input');
+                const icon = btn.querySelector('i');
+                if(input.type === 'password') {
+                    input.type = 'text';
+                    icon.classList.replace('fa-eye', 'fa-eye-slash');
+                } else {
+                    input.type = 'password';
+                    icon.classList.replace('fa-eye-slash', 'fa-eye');
+                }
+            });
+        });
+    </script>
+    <script src="js/main.js"></script>
+    <script type="module" src="js/api.js"></script>
+    <script type="module" src="js/register.js"></script>
+</body>
+</html>
