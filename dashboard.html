@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>MoneyMate – Dashboard</title>
+  <!-- Google Font & Font Awesome -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-pVIc0XAf6mE3sW+Nzx7x4FI+hX1Uv+GiqJtmvYdc1tlNJ19fZ3sXK6/4NC3K4uYCxu+0lP8e+zl5y6N2sp78wg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="css/styles.css"/>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link
+    rel="icon"
+    href="images/favicon-32x32.png"
+    type="image/png"
+    />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="branding"><h1>Money<span>Mate</span></h1></div>
+      <nav class="site-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="dashboard.html" class="nav-link is-active">Dashboard</a>
+        <a href="budgets.html" class="nav-link">Budgets</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="login.html" class="nav-link">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- DASHBOARD ACTION BAR -->
+  <section class="dashboard-header">
+    <div class="container">
+      <h2>Dashboard</h2>
+      <div class="actions">
+        <button class="btn btn-primary">
+          <i class="fas fa-plus"></i> Add Transaction
+        </button>
+        <button class="btn btn-outline-secondary">
+          <i class="fas fa-chart-pie"></i> Insights
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- DASHBOARD CONTENT -->
+  <section class="dashboard-section">
+    <div class="container">
+      <!-- Metrics Cards -->
+      <div class="summary-cards">
+        <div class="metrics-card" data-type="income">
+          <div class="metrics-icon"><i class="fas fa-dollar-sign"></i></div>
+          <div class="metrics-info">
+            <h4>Total Income</h4>
+            <p class="metrics-value">$5,200</p>
+          </div>
+        </div>
+        <div class="metrics-card" data-type="expense">
+          <div class="metrics-icon"><i class="fas fa-receipt"></i></div>
+          <div class="metrics-info">
+            <h4>Total Expenses</h4>
+            <p class="metrics-value">$3,200</p>
+          </div>
+        </div>
+        <div class="metrics-card" data-type="net">
+          <div class="metrics-icon"><i class="fas fa-piggy-bank"></i></div>
+          <div class="metrics-info">
+            <h4>Net Savings</h4>
+            <p class="metrics-value">$2,000</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Insights Cards -->
+      <div class="insights-section">
+        <h3 class="section-title">Quick Insights</h3>
+        <div class="insights-grid">
+          <div class="insight-card">
+            <i class="fas fa-chart-line"></i>
+            <h5>Top Category</h5>
+            <p>Groceries — $1,200</p>
+          </div>
+          <div class="insight-card">
+            <i class="fas fa-calendar-day"></i>
+            <h5>Avg. Daily Spend</h5>
+            <p>$102/day</p>
+          </div>
+          <div class="insight-card">
+            <i class="fas fa-percent"></i>
+            <h5>Savings Rate</h5>
+            <p>38%</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Charts -->
+      <div class="charts-grid">
+        <div class="chart-card">
+          <div class="chart-header">
+            <h4>Income vs Expenses</h4>
+            <i class="fas fa-ellipsis-h"></i>
+          </div>
+          <canvas id="incomeExpenseChart"></canvas>
+        </div>
+        <div class="chart-card">
+          <div class="chart-header">
+            <h4>Budget Allocation</h4>
+            <i class="fas fa-ellipsis-h"></i>
+          </div>
+          <canvas id="budgetChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2025 MoneyMate. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Dashboard Script -->
+  <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>
+
+
+
+
+
+

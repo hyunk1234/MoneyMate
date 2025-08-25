@@ -1,0 +1,49 @@
+:root {
+  --clr-primary:   #4A90E2;
+  --clr-secondary: #2C3E50;
+  --clr-accent:    #50E3C2;
+  --clr-light:     #F7F9FC;
+  --clr-white:     #FFFFFF;
+  --clr-grey:      #BDC3C7;
+  --shadow-light:  rgba(0,0,0,0.05);
+  --shadow-heavy:  rgba(0,0,0,0.15);
+  --transition:    all 0.3s ease;
+}
+.transactions-section {
+  padding: 2rem 0;
+}
+.transactions-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--clr-white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px var(--shadow-light);
+}
+.transactions-table th,
+.transactions-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--clr-light);
+}
+.transactions-table th {
+  background: var(--clr-light);
+  color: var(--clr-secondary);
+  font-weight: 600;
+}
+.transactions-table tr:hover td {
+  background: rgba(74,144,226,0.05);
+}
+.transactions-table .text-right {
+  text-align: right;
+}
+.transactions-table .actions button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--clr-secondary);
+  font-size: 1rem;
+}
+.transactions-table .actions button:hover {
+  color: var(--clr-primary);
+}

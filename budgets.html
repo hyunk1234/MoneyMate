@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>MoneyMate – Budgets</title>
+
+  <!-- Google Font & Font Awesome -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-pVIc0XAf6mE3sW+Nzx7x4FI+hX1Uv+GiqJtmvYdc1tlNJ19fZ3sXK6/4NC3K4uYCxu+0lP8e+zl5y6N2sp78wg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link
+    rel="icon"
+    href="images/favicon-32x32.png"
+    type="image/png"
+    />
+
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="css/styles.css"/>
+  <link rel="stylesheet" href="css/budget.css"/>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="branding"><h1>Money<span>Mate</span></h1></div>
+      <nav class="site-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="budgets.html" class="nav-link is-active">Budgets</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="login.html" class="nav-link">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BUDGETS ACTION BAR -->
+  <section class="budget-header">
+    <div class="container">
+      <h2>Budget Planning</h2>
+      <button class="btn btn-primary">
+        <i class="fas fa-plus"></i> New Budget
+      </button>
+    </div>
+  </section>
+
+  <!-- BUDGETS CONTENT -->
+  <section class="budgets-section">
+    <div class="container">
+      <div class="budget-cards">
+        <div class="budget-card">
+          <div class="budget-top" data-type="groceries">
+            <i class="fas fa-shopping-basket"></i>
+            <h3>Groceries</h3>
+          </div>
+          <div class="budget-details">
+            <p class="amount">
+              Spent: <strong>$400</strong> / $600
+            </p>
+            <div class="progress-bar">
+              <div class="progress" style="width: 66%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="budget-card">
+          <div class="budget-top" data-type="rent">
+            <i class="fas fa-home"></i>
+            <h3>Rent</h3>
+          </div>
+          <div class="budget-details">
+            <p class="amount">
+              Spent: <strong>$1,200</strong> / $1,200
+            </p>
+            <div class="progress-bar">
+              <div class="progress" style="width: 100%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="budget-card">
+          <div class="budget-top" data-type="entertainment">
+            <i class="fas fa-film"></i>
+            <h3>Entertainment</h3>
+          </div>
+          <div class="budget-details">
+            <p class="amount">
+              Spent: <strong>$150</strong> / $300
+            </p>
+            <div class="progress-bar">
+              <div class="progress" style="width: 50%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add more budgets as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2025 MoneyMate. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
