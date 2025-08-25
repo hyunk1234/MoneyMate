@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   deploy:
-    runs-on: mac-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
